@@ -3,8 +3,7 @@ import React from 'react';
 import './index.css';
 
 export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
+  variant?: 'text' | 'outlined' | 'contained';
   /** What background color to use */
   backgroundColor?: string;
   /** How large should the button be? */
@@ -17,17 +16,16 @@ export interface ButtonProps {
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  primary = false,
+  variant = 'text',
   size = 'medium',
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'button--primary' : 'button--secondary';
   return (
     <button
       type="button"
-      className={['button', `button--${size}`, mode].join(' ')}
+      className={['button', `button--${size}`, `button--${variant}`].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
