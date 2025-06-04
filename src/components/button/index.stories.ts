@@ -30,6 +30,7 @@ export const Text: Story = {
   args: {
     variant: 'text',
     label: 'TEXT',
+    size: "medium"
   },
 };
 
@@ -37,6 +38,7 @@ export const Outlined: Story = {
   args: {
     variant: 'outlined',
     label: 'OUTLINED',
+    size: "medium"
   },
 };
 
@@ -44,6 +46,7 @@ export const Contained: Story = {
   args: {
     variant: 'contained',
     label: 'CONTAINED',
+    size: "medium"
   },
 };
 
@@ -51,6 +54,7 @@ export const Large: Story = {
   args: {
     size: 'large',
     label: 'Button',
+    variant: "contained"
   },
 };
 
@@ -58,5 +62,33 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
+    variant: "contained"
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: 'outlined',
+    label: 'SECONDARY',
+    size: "medium",
+    color: 'secondary'
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: 'contained',
+    label: 'SUCCESS',
+    size: "medium",
+    color: 'success',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    variant: 'contained',
+    label: 'ERROR',
+    size: "medium",
+    color: 'error',
   },
 };

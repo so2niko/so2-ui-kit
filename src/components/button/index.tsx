@@ -4,13 +4,10 @@ import './index.css';
 
 export interface ButtonProps {
   variant?: 'text' | 'outlined' | 'contained';
-  /** What background color to use */
   backgroundColor?: string;
-  /** How large should the button be? */
   size?: 'small' | 'medium' | 'large';
-  /** Button contents */
+  color?: 'default' | 'secondary' | 'success' | 'error';
   label: string;
-  /** Optional click handler */
   onClick?: () => void;
 }
 
@@ -18,6 +15,7 @@ export interface ButtonProps {
 export const Button = ({
   variant = 'text',
   size = 'medium',
+  color = 'default',
   backgroundColor,
   label,
   ...props
@@ -25,7 +23,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={['button', `button--${size}`, `button--${variant}`].join(' ')}
+      className={['button', `button--${size}`, `button--${variant}`, `button--${color}`].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
