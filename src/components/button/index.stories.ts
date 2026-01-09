@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { fn } from 'storybook/test';
 
-import { Button } from './Button';
+import { Button } from '.';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
+  title: 'WIP/Button',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -26,16 +26,30 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Text: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    variant: 'text',
+    label: 'TEXT',
+    size: "medium",
+    color: "default"
   },
 };
 
-export const Secondary: Story = {
+export const Outlined: Story = {
   args: {
-    label: 'Button',
+    variant: 'outlined',
+    label: 'OUTLINED',
+    size: "medium",
+    color: "default"
+  },
+};
+
+export const Contained: Story = {
+  args: {
+    variant: 'contained',
+    label: 'CONTAINED',
+    size: "medium",
+    color: "default"
   },
 };
 
@@ -43,6 +57,8 @@ export const Large: Story = {
   args: {
     size: 'large',
     label: 'Button',
+    variant: "contained",
+    color: "default"
   },
 };
 
@@ -50,5 +66,34 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
+    variant: "contained",
+    color: "default"
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: 'outlined',
+    label: 'SECONDARY',
+    size: "medium",
+    color: 'secondary'
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: 'contained',
+    label: 'SUCCESS',
+    size: "medium",
+    color: 'success',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    variant: 'contained',
+    label: 'ERROR',
+    size: "medium",
+    color: 'error',
   },
 };
